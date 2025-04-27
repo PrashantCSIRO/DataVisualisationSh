@@ -1,4 +1,56 @@
 import streamlit as st
+
+# Title
+st.title("Water Quality Data Processor and Visualiser")
+
+# Sidebar Instructions
+with st.sidebar:
+    st.header("📋 Instructions")
+    st.markdown("""
+    **How to Use This App:**
+    - Upload a spreadsheet in `.csv`, `.xls`, or `.xlsx` format.
+    - Select the desired sheet containing the water quality data.
+    - Follow the on-screen options to process and visualise the data.
+
+    **Data Formatting Requirements:**
+    - The **first column** must contain the **parameter names** (e.g., pH, Turbidity, etc.).
+    - The **first row** must contain the **sampling dates** in a consistent format (e.g., DD/MM/YYYY or MM/YYYY).
+    - Any value with a '<' sign (e.g., '<0.1') will be converted to **0**.
+    - Blank cells must be left empty (they will automatically be filled as **0**).
+    - Multiple sheets are supported — make sure to select the correct sheet after upload.
+
+    **Features Available:**
+    - Clean and standardise your uploaded dataset.
+    - View scatter plots between two water quality parameters.
+    - View time series trends for one or more parameters.
+    - View parameter ratios over time.
+
+    **Output Tips:**
+    - Sampling dates are reformatted to **MM-YY** style for clarity.
+    - Duplicate dates or parameters are automatically merged using the **mean** value.
+
+    """)
+
+    st.info("Please ensure your data matches the required structure before uploading.")
+
+# Optional: Expandable detailed help
+with st.expander("🔎 Need more detailed help? Click here"):
+    st.markdown("""
+    ### Sample Spreadsheet Layout:
+
+    | Parameter    | 01/01/2022 | 01/02/2022 | 01/03/2022 |
+    |--------------|------------|------------|------------|
+    | pH           | 7.2        | 7.0        | 7.1        |
+    | Turbidity    | <0.5       | 0.6        |            |
+    | Conductivity | 450        | 460        | 455        |
+
+    - After upload, the app will clean, transpose, and visualise your data.
+    - You can select parameters for scatter plots and time series graphs easily.
+
+    """)
+
+# Continue with your main app logic below...
+
 import pandas as pd
 import numpy as np
 import plotly.express as px
