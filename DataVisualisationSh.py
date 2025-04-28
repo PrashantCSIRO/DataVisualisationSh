@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Title
-st.title("Water Quality Data Processor and Visualiser")
+st.title("Brine Data Visualiser")
 
 # Sidebar Instructions
 with st.sidebar:
