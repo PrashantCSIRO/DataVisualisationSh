@@ -153,6 +153,9 @@ def ratio_plot(data, numerator, denominator):
     )
     st.plotly_chart(fig)
 
+# Set Streamlit page configuration
+st.set_page_config(page_title="Brine Data Visualiser", layout="wide")
+
 # Streamlit app layout
 st.title("Brine Data Visualiser")
 
