@@ -1,8 +1,5 @@
 import streamlit as st
 
-# Title
-st.title("Brine Data Visualiser")
-
 # Sidebar Instructions
 with st.sidebar:
     st.header("📋 Instructions")
@@ -157,7 +154,7 @@ def ratio_plot(data, numerator, denominator):
     st.plotly_chart(fig)
 
 # Streamlit app layout
-st.title("Water Quality Data Visualiser")
+st.title("Brine Data Visualiser")
 
 uploaded_file = st.file_uploader("Upload your Spreadsheet (.csv, .xls, .xlsx)", type=['csv', 'xls', 'xlsx'])
 
